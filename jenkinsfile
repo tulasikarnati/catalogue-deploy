@@ -4,9 +4,9 @@ pipeline {
             label 'AGENT-1'
         }
     }
-    // environment {
-    //     GREETING = "Good Morning"
-    // }
+    environment {
+        GREETING = "Good Morning"
+    }
     options {
         timeout(time: 1, unit: 'HOURS')
         disableConcurrentBuilds() 
