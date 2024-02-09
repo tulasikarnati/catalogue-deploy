@@ -1,4 +1,4 @@
-bucket = "daws76s-state-dev"
-key    = "catalogue"
+bucket = "daws94t-state-dev"
+key    = "catalogue-dev"
 region = "us-east-1"
-dynamodb_table = "daws76s-locking-dev"
+dynamodb_table = "daws94t-locking-dev"
