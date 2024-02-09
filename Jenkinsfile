@@ -23,7 +23,7 @@ pipeline {
                 sh """
                     echo "version: ${params.version}"
                     echo "environment: ${params.environment}" 
-                    echo pwd
+                    echo $pwd
                 """
             }
         }
