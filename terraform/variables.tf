@@ -22,3 +22,7 @@ variable "environment" {
 variable "zone_name" {
   default = "daws94t.online"
 }
+
+variable "app_version" {
+  
+}

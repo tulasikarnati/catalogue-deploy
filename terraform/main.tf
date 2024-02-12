@@ -22,7 +22,7 @@ module "catalogue" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = [data.aws_ssm_parameter.catalogue_sg_id.value]
   subnet_id              = element(split(",", data.aws_ssm_parameter.private_subnet_ids.value), 0)
-  iam_instance_profile = "ShellScriptRoleForRoboshop"
+  iam_instance_profile = "ec2roleshellscript"
   tags = merge(
     var.common_tags,
     var.tags
@@ -53,7 +53,7 @@ resource "null_resource" "catalogue" {
     # Bootstrap script called with private_ip of each node in the cluster
     inline = [
       "chmod +x /tmp/bootstrap.sh",
-      "sudo sh /tmp/bootstrap.sh catalogue dev" 
+      "sudo sh /tmp/bootstrap.sh catalogue dev ${var.app_version}" 
     ]
   }
 }
