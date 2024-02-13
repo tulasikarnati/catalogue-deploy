@@ -43,6 +43,9 @@ resource "null_resource" "catalogue" {
     user = "centos"
     password = "DevOps321"
   }
+  provisioner "remote-exec" {
+    inline = [ "echo pwd" ]
+  }
 
   provisioner "file" {
     source      = "bootstrap.sh"
